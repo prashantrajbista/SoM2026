@@ -17,7 +17,11 @@ import scipy.io as sio
 
 DATA = Path('dataset')
 OUT = Path('experiments'); OUT.mkdir(exist_ok=True)
-TASK1_PRED = Path('experiments/notebook_task1/submission.json')
+# physics + WiFo2 + MAE adaptation, binary F1 0.914 seed-averaged
+# (notebook/task1_mae.ipynb). The no-MAE version scored 0.79 on the private
+# leaderboard and lives in experiments/task1_physics/; the repo baseline head
+# scored 0.72 and lives in experiments/notebook_task1/.
+TASK1_PRED = Path('experiments/task1_mae/submission.json')
 
 
 def load_mat(path, key):
