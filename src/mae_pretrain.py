@@ -122,7 +122,7 @@ def features(m, x, batch=16):
 def _demo():
     """Reconstruction loss must fall, and the encoder must still produce usable features."""
     from pathlib import Path
-    root = Path(__file__).parent
+    root = Path(__file__).parent.parent
     m, _ = build(root / 'weights/model_best.pkl', root / 'weights/FastDepthV2_L1_Best.pth')
     corpus = torch.randn(12, 2, 24, 8, 128)
     before = features(m, corpus[:4])
